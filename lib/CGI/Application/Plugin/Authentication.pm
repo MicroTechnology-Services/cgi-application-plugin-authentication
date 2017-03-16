@@ -1,9 +1,9 @@
 package CGI::Application::Plugin::Authentication;
 
+# ABSTRACT: Authentication framework for CGI::Application
+
 use 5.006;
 use strict;
-our $VERSION = '0.20';
-
 our %__CONFIG;
 
 use Class::ISA ();
@@ -38,15 +38,6 @@ sub CGI::Application::Authen : ATTR(CODE) {
     my ( $package, $symbol, $referent, $attr, $data, $phase ) = @_;
     $RUNMODES{$referent} = $data || 1;
 }
-
-
-=head1 NAME
-
-CGI::Application::Plugin::Authentication - Authentication framework for CGI::Application
-
-=head1 VERSION
-
-This document describes CGI::Application::Plugin::Authentication version 0.20
 
 =head1 SYNOPSIS
 
@@ -184,10 +175,6 @@ then the method you wish to invoke.  For example:
     }
 
 }
-
-package CGI::Application::Plugin::Authentication;
-
-
 
 =head1 METHODS
 

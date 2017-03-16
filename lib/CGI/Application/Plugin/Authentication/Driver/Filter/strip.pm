@@ -1,8 +1,9 @@
 package CGI::Application::Plugin::Authentication::Driver::Filter::strip;
 
+# ABSTRACT: Filter that strips whitespace from the beginning and end of the string
+
 use strict;
 use warnings;
-our $VERSION = '0.20';
 
 sub check {
     return ( _strip( $_[2] ) eq $_[3] ) ? 1 : 0;
@@ -22,14 +23,6 @@ sub _strip {
 1;
 __END__
 
-
-=head1 NAME
-
-CGI::Application::Plugin::Authentication::Driver::Filter::strip - Filter that strips whitespace from the beginning and end of the string
-
-=head1 VERSION
-
-This document describes CGI::Application::Plugin::Authentication::Driver::Filter::strip version 0.20
 
 =head1 METHODS
 

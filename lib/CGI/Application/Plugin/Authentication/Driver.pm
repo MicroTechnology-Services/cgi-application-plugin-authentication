@@ -1,19 +1,11 @@
 package CGI::Application::Plugin::Authentication::Driver;
 
+# ABSTRACT: Base module for building driver classes for CGI::Application::Plugin::Authentication
+
 use strict;
 use warnings;
-our $VERSION = '0.20';
 
 use UNIVERSAL::require;
-
-=head1 NAME
-
-CGI::Application::Plugin::Authentication::Driver - Base module for building driver classes
-for CGI::Application::Plugin::Authentication
-
-=head1 VERSION
-
-This document describes CGI::Application::Plugin::Authentication::Driver version 0.20
 
 =head1 SYNOPSIS
 
