@@ -24,4 +24,5 @@ on 'test' => sub {
    requires 'Test::Taint';
    requires 'Test::Warn' => '0.11';  # older versions may have problems with fresh Sub::Uplevel
    requires 'Test::Without::Module';
+   requires 'DBD::SQLite';
 };
