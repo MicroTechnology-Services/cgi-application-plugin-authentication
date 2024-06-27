@@ -62,6 +62,15 @@ my $cap_options =
 
 }
 
+sub contents {
+    my $file = shift;
+    my $fh = FileHandle->new;
+    $fh->open("<$file") || return ok( 0, "cannot open $file" );
+    $fh->binmode;
+    my $content = join '', (<$fh>);
+    return $content
+};
+
 subtest 'empty' => sub {
     plan tests => 14;
     my $cgiapp = TestAppAuthenticate->new;
@@ -74,7 +83,11 @@ subtest 'empty' => sub {
     isa_ok($display, 'CGI::Application::Plugin::Authentication::Display');
     isa_ok($display, 'CGI::Application::Plugin::Authentication::Display::Basic');
     is($display->login_title, 'Sign In', 'title');
-    ok_regression(sub {return $display->login_box}, 't/out/basic_login_box', 'login box');
+    ok(
+         $display->login_box eq contents('t/out/basic_login_box') ||
+         $display->login_box eq contents('t/out/basic_login_box_trailing_slash'),
+        'login box'
+    );
     is($display->logout_form, '', 'logout_form');
     is($display->is_authenticated, 0, 'is_authenticated');
     is($display->username, undef, 'username');
