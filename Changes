@@ -1,6 +1,7 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+   Fix tests failing on CGI.pm >= 4.66 (thanks Chris Peterson)
 
 0.24      2024-01-05 15:30:08-06:00 America/Chicago
    Fix tests failing on CGI.pm >= 4.58 (Gregor Herrmann and Debian Perl)
